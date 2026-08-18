@@ -36,6 +36,30 @@ Set the display currency to RUB in **Настройки → Отображени
 rate under **Курсы валют** — an amount in a currency with no rate is left out of
 the total and named in a banner rather than counted at a guessed rate.
 
+## Connecting a Bybit Card key
+
+**Настройки → Проверка соединения** first. It reports whether this browser can
+actually read a response from `api.bybit.com`, which is the open question the
+project has not been able to answer from a server in the US — Bybit blocks it
+there. The answer decides whether a relay is needed at all, so the result of
+that one tap is genuinely useful.
+
+Then **Настройки → Bybit Card**. The key is checked before it is stored:
+
+- A **Read Only** key connects.
+- A key that can trade, transfer or withdraw is refused, and the refusal says
+  which of those it found. Under it is **«Я принимаю риски, использовать этот
+  ключ»** — the block is a recommendation, not a lock, and the choice is yours.
+- If you take that option, the warning stays visible for as long as the key is
+  connected, and it lists what the key can do. Change the key's permissions in
+  Bybit afterwards and synchronisation stops until you confirm again: the
+  consent covers the permissions you were shown, not the key forever.
+
+A read-only key is still the right answer. The application holds the key in the
+encrypted vault on your device, and its whole security argument is that a stolen
+key is not worth stealing — which stops being true the moment the key can move
+money.
+
 ## What to look at
 
 The transfer on 16 August should **not** count towards spending, and the refund
